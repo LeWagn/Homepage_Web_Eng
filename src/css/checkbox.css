@@ -1,0 +1,65 @@
+.checkbox{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox_input{
+    display: none;
+}
+
+.checkbox_box{
+    width: 1.25em;
+    height: 1.25em;
+    border: 2px solid black;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 10px;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.checkbox_box::after{
+    content: '\2714';
+    color: #fff;
+    transform: scale(0);
+    transition: transform 0.15s;
+}
+
+.checkbox_input:checked + .checkbox_box{
+    background: blue;
+    border-color: blue;
+}
+
+.checkbox_input:checked + .checkbox_box::after{
+    transform:scale(1);
+}
+
+/*
+
+.water-image{
+    visibility:hidden;
+    display: block;
+    width: 100%;
+    top:5%
+}
+
+.water-image::after {
+    visibility:visible;
+    transform: scale(0);
+    transition: transform 0.15s;
+    width: 100%;
+    top:5%;
+}
+
+.checkbox_input:checked + .water-image{
+    visibility: visible;
+    width: 100%;
+    top:5%
+}
+
+.checkbox_input:checked + .water-image::after{
+    transform: scale(1);
+}
+*/
