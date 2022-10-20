@@ -122,4 +122,37 @@
     </table>
     <br>
     <hr>
+    <h1>Aufgabe 2.1 CSS Selektoren und CSS Farben</h1>
+    <h4>Berechnen Sie die Spezifität folgender CSS-Selektoren:
+    <h4 style="font-style:oblique">A= Ids B= (Pseudo) Klassen & Attribute C=(Pseudo) Elemente
+    </h4>
+
+    <div class="ol">
+      <ol>
+      <li class="list"><code>div div div:focus .inner </code><span class="items">A = 0, B = 2, C = 3</span></li>
+      <li class="list"><code>h1+div.main </code><span class="items">A = 0, B = 1, C = 2</span></li>
+      <li class="list"><code>div a:link[href*='h-brs'] </code><span class="items">A = 0, B = 2, C = 2</span></li>
+      <li class="list"><code>nav > a:hover::before </code><span class="items">A = 0, B = 1, C = 3</span></li>
+      <li class="list"><code>ul#primary-nav li.active </code><span class="items">A = 1, B = 1, C = 2</span></li>
+    </ol>
+    <h4>Rechnen Sie folgende RGB-Werte in HSL-Werte um:</h4>
+      <div class="ol">
+        <ol>
+        <li class="list"><code>#ffffff</code><span class="items">hsl(0, 0%, 100%)</span></li>
+        <li class="list"><code>#000</code><span class="items">hsl(0, 0%, 0%)</span></li>
+        <li class="list"><code>#ab0978</code><span class="items">hsl(319, 90%, 35%)</span></li>
+        <li class="list"><code>rgb(127,255,33)</code><span class="items">hsl(95, 100%, 56.5%)</span></li>
+        <li class="list"><code>rgba(255,127,33,0.8)</code><span class="items">hsla(25, 100%, 56.5%, 0.8)</span></li>
+      </ol>
+    <style>
+      .items{
+        float: right;
+        background-color: transparent;
+        margin-right: 20%;
+      }
+      .list{
+        background-color: #f9f2f469;
+        color:#c7254e
+      }
+    </style>
 </html>
