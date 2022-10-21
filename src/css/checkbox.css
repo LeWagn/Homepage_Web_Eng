@@ -1,5 +1,5 @@
 .checkbox{
-    display: inline-flex;
+    display: block;
     align-items: center;
     cursor: pointer;
 }
@@ -36,30 +36,15 @@
     transform:scale(1);
 }
 
-/*
+img{
+    opacity: 0;
+    width: 100%;
+    top: 5%;
+}
+input[type="checkbox"]:checked ~ div > img{
+    opacity: 100;
+}
 
 .water-image{
-    visibility:hidden;
-    display: block;
-    width: 100%;
-    top:5%
+    border: 2px solid black;
 }
-
-.water-image::after {
-    visibility:visible;
-    transform: scale(0);
-    transition: transform 0.15s;
-    width: 100%;
-    top:5%;
-}
-
-.checkbox_input:checked + .water-image{
-    visibility: visible;
-    width: 100%;
-    top:5%
-}
-
-.checkbox_input:checked + .water-image::after{
-    transform: scale(1);
-}
-*/
