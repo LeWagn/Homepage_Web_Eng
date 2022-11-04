@@ -1,0 +1,107 @@
+h1{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+.wrapper{
+    /*align-content: center;
+    justify-content: center;
+    flex-flow: column wrap; */
+    display: flex;
+    height: 60vh;
+    color: darkgray;
+    justify-content: center;
+}
+
+.topper{
+    display: flex;
+    height: 20vh;
+    margin-left: 14.75vw;
+    width: 68.85vw;
+    flex-basis:70%;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.box{
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.color-1{
+    background-color: #f52806;
+    flex-grow: 1;
+}
+
+.color-2{
+    background-color: #41f01b;
+    flex-grow: 1;
+}
+
+.color-3{
+    background-color: #3b00ff;
+    flex-grow: 5;
+    
+}
+
+.color-4{
+    background-color: #e50afe;
+    flex-grow: 1;
+}
+
+
+/*
+.red{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 80vw;
+    height: 20vh;
+    margin-top: 20px;
+    order: 0
+}
+
+.green {
+    background-color: green;
+    width: 80vw;
+    height: 20vh;
+    align-self: center;
+    margin-top: 20px;
+    order: 1
+}
+
+.blue {
+    background-color: blue;
+    width: 80vw;
+    height: 20vh;
+    align-self: center;
+    margin-top: 20px;
+    order: 2
+}
+
+.purple {
+    background-color: purple;
+    width: 80vw;
+    height: 20vh;
+    align-self: center;
+    margin-top: 20px;
+    order: 3
+}
+*/
+@media screen and (min-width: 320px) and (max-width: 786px) {
+    .spacer {padding: 0px; margin: 0px;}
+}
+
+@media screen and (min-width: 787px) and (max-width: 1280px){
+    .spacer {padding: 15px; margin: 1px;}
+}
+.spacer {
+    padding: 30px;
+    margin: 2px;
+  }
