@@ -6,102 +6,60 @@ h4{
     text-align: center;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 .wrapper{
-    /*align-content: center;
-    justify-content: center;
-    flex-flow: column wrap; */
     display: flex;
-    height: 60vh;
+    height: 80vh;
     color: darkgray;
-    justify-content: center;
-}
-
-.topper{
-    display: flex;
-    height: 20vh;
-    margin-left: 14.75vw;
-    width: 68.85vw;
-    flex-basis:70%;
-    flex-direction:row;
-    justify-content: center;
-}
-
-.box{
-    flex-basis: 70%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin: 2vw 4vw 2vw 4vw;
+    flex-wrap: wrap;
 }
 
 .color-1{
     background-color: #f52806;
     flex-grow: 1;
+    height: 25%;
+    flex-basis: 100%;
+    margin-bottom: 1vw;
 }
 
 .color-2{
     background-color: #41f01b;
     flex-grow: 1;
+    height: 75%;
+    flex-basis: 20%
 }
 
 .color-3{
     background-color: #3b00ff;
     flex-grow: 5;
-    
+    flex-basis: 56%;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw
 }
 
 .color-4{
     background-color: #e50afe;
     flex-grow: 1;
+    height: 75%;
+    flex-basis: 20%
 }
 
-
-/*
-.red{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
-    width: 80vw;
-    height: 20vh;
-    margin-top: 20px;
-    order: 0
+@media screen and (max-width: 1280px){
+    .wrapper {    margin: 4vw 1vw 0vw 1vw;}
+    .color-1 {height: 25%; margin-bottom: 1%;}
+    .color-2 {flex-basis: 33%; height: 85%;}
+    .color-3 {flex-basis: 66%; height: 85%; margin-right: 0vw;}
+    .color-4 {flex-basis: 100%; margin-top: 1vw; height: 15%;}
 }
 
-.green {
-    background-color: green;
-    width: 80vw;
-    height: 20vh;
-    align-self: center;
-    margin-top: 20px;
-    order: 1
+@media screen and (max-width: 600px) {
+    .wrapper {margin: 0%;}
+    .color-1 {height: 15%; margin-bottom: 0%;}
+    .color-2 {flex-basis: 100%; height: 20%;}
+    .color-3 {flex-basis: 100%; height: 85%; margin-right: 0vw;}
+    .color-4 {flex-basis: 100%; height: 15%;}
 }
-
-.blue {
-    background-color: blue;
-    width: 80vw;
-    height: 20vh;
-    align-self: center;
-    margin-top: 20px;
-    order: 2
-}
-
-.purple {
-    background-color: purple;
-    width: 80vw;
-    height: 20vh;
-    align-self: center;
-    margin-top: 20px;
-    order: 3
-}
-*/
-@media screen and (min-width: 320px) and (max-width: 786px) {
-    .spacer {padding: 0px; margin: 0px;}
-}
-
-@media screen and (min-width: 787px) and (max-width: 1280px){
-    .spacer {padding: 15px; margin: 1px;}
-}
-.spacer {
-    padding: 30px;
-    margin: 2px;
-  }
