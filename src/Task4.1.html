@@ -7,7 +7,7 @@
     <title>Task 4 (JavaScript)</title>
 </head>
 <body>
-    <h1>Task 4.1 JavaScript:</h1>
+    <h1>Task 4.1 Funktionen:</h1>
     <h3>Task 4.1.1:</h3>
     <h5>Schreiben Sie eine Funktion identity(), die ein Argument als Parameter entgegen nimmt und dieses als Ergebnis zurück gibt.</h5>
         <code>function identity(x){<br> 
@@ -103,5 +103,18 @@
         console.log(applyf(mul)(3)(4));
     </code>
     <p>Returns 7 and 12 respectively</p>
+    <h1>Task 4.2: Objekte</h1>
+    <h1>Task 4.3: Fibonacci</h1>
+    <script>
+        function fibonacci(number) {
+            let fib = [0, 1]
+            for (var n = 2; n <= number; n++) {
+                fib[n] = fib[n - 1] + fib[n - 2];
+            }
+            return fibo;
+        }
+        console.log(fibonacci(2000))
+    </script>
+    <h1>Task 4.4: TopSort</h1>
 </body>
 </html>
