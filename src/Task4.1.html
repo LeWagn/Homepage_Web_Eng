@@ -7,11 +7,11 @@
     <title>Task 4 (JavaScript)</title>
 </head>
 <body>
-    <h1>Task 4.1 Funktionen:</h1>
+    <h1 onclick="this.style.color='orange';">Task 4.1 Funktionen:</h1>
     <h3>Task 4.1.1:</h3>
     <h5>Schreiben Sie eine Funktion identity(), die ein Argument als Parameter entgegen nimmt und dieses als Ergebnis zurück gibt.</h5>
         <code>function identity(x){<br> 
-            return x <br> 
+            <span style="margin-left: 1em; color: purple">return</span> x <br> 
         } <br> 
         console.log(identity(5));</code>
         <p>Returns 5.</p>
@@ -24,7 +24,7 @@
     <h3>Task 4.1.2</h3>
     <h5>Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.</h5>
         <code>function identity_function(y){<br>
-            return identity(y)<br>
+            <span style="margin-left:1em; color: purple">return</span> identity(y)<br>
         }<br>
         console.log(identity_function(5));</code>
         <p>Returns 5.</p>
@@ -36,14 +36,14 @@
     </script>
     <h3>Task 4.1.3</h3>
     <h5>Schreiben Sie zwei binäre Funktionen add und mul, die Summe und Produkt berechnen.</h5>
-        <code> function add(a, b){<br>
-            return a + b;<br>
-        }<br>
-        console.log(add(4,4));<br>
-        <p>Returns 8.</p><br><br>
-        function mul(a, b){<br>
-            return a * b;<br>
-        }<br>
+    <code> function add(a, b){<br>
+        <span style="margin-left:1em; color:purple">return</span> a + b;<br>
+    }<br>
+    console.log(add(4,4));<br>
+    <p>Returns 8.</p><br><br>
+    function mul(a, b){<br>
+        <span style="margin-left:1em; color:purple">return</span> a * b;<br>
+    }<br>
         console.log(mul(4,4))</code>
         <p>Returns 16.</p>
     <script>
@@ -69,9 +69,9 @@
     </script>
         <code>
             function addf(x){<br>
-                return function(y){<br>
-                    return x + y;<br>
-                }<br>
+                <span style="margin-left:1em; color:purple">return</span> function(y){<br>
+                    <span style="margin-left:2em; color:purple">return</span> x + y;<br>
+                    <span style="margin-left:1em;">}</span><br>
             }<br>
             console.log(addf(3)(4));
         </code>
@@ -92,29 +92,37 @@
     </script>
     <code>
         function applyf(binary){<br>
-            return function(x){<br>
-                return function(y){<br>
-                    return binary(x,y);<br>
-                }<br>
-            }<br>
+            <span style="margin-left:1em; color:purple">return</span> function(x){<br>
+                <span style="margin-left:2em; color:purple">return</span> function(y){<br>
+                    <span style="margin-left:3em; color:purple">return</span> binary(x,y);<br>
+                <span style="margin-left:2em;">}</span><br>
+            <span style="margin-left:1em;">}</span><br>
         }<br>
         console.log(addf=applyf(add));<br>
         console.log(addf(3)(4));<br>
         console.log(applyf(mul)(3)(4));
     </code>
     <p>Returns 7 and 12 respectively</p>
-    <h1>Task 4.2: Objekte</h1>
-    <h1>Task 4.3: Fibonacci</h1>
+    <h1 onclick="this.style.color='orange';">Task 4.2: Objects</h1>
     <script>
-        function fibonacci(number) {
-            let fib = [0, 1]
-            for (var n = 2; n <= number; n++) {
-                fib[n] = fib[n - 1] + fib[n - 2];
+        /** currently in Progress...
+        -> change: check if the same value for carModel exists more than once.
+        const carDataOne = [{ownerName: 'Jan', carModel: 'BMM'}, {ownerName: 'Ben', carModel: 'Audi'}, {ownerName: 'Jess', carModel: 'VW'}]
+        const carDataTwo = [{ownerName: 'Tim', carModel: 'Tesla'}, {ownerName: 'Stacy', carModel: 'Dodge'}, {ownerName: 'Steve', carModel: 'Mercedes'}]
+        function conflict(carDataOne, carDataTwo){
+            var conflictExists = true;
+            for(var ownerName in carDataOne) {
+                if(carDataOne[ownerName] !== carDataTwo[ownerName]){
+                    conflictExists = false;
+                    console.log("no conflicts!")
+                    break;
+                }
             }
-            return fibo;
+            return conflictExists;
+            console.log("Conflict detected!")
         }
-        console.log(fibonacci(2000))
+        */
     </script>
-    <h1>Task 4.4: TopSort</h1>
+    <h1 onclick="this.style.color='orange';">Task 4.4: TopSort</h1>
 </body>
 </html>
