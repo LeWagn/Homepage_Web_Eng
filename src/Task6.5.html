@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6.5: Deep Copy</title>
+    <script>
+        const deepCopy = (struct) => Array.isArray(struct) ? struct.map(deepCopy) : 
+                             typeof struct === 'object' ? Object.fromEntries(Object.entries(struct).map(([k,v])=> [k,deepCopy(v)])) :
+                             struct;
+
+        const originalArray = [1,2,3];
+        const originalObject = {a:1,b:2};
+        const originalNestedObject = {a:[1,2,3],b:2};
+
+        console.assert(deepCopy(originalArray) !== originalArray);
+        console.assert(deepCopy(originalObject) !== originalObject);
+        console.assert(deepCopy(originalNestedObject) !== originalNestedObject);
+
+        console.log(deepCopy(originalArray));
+        console.log(deepCopy(originalObject));
+        console.log(deepCopy(originalNestedObject));
+    </script>
+</head>
+<body>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            margin-left: 60vh;
+            margin-right: auto;
+            width: 80%;
+          }
+        h1 {
+            margin-top: 50px;
+            font-size: 36px;
+            color: #333;
+        }
+        code {
+
+            font-family: 'Courier New', monospace;
+        }
+        .const {
+            color: blue;
+        }
+        .function {
+            color: purple;
+        }
+        .assert {
+            color: green;
+        }
+        .log{
+            color: orange;
+        }
+        .return{
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            width: 30vh;
+        }
+        p{
+            margin: 0;
+        }
+        a{
+            background-color:  rgb(216, 157, 29);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 1vh;
+            cursor: pointer;
+            width: 3%;
+            text-align: start;
+            text-decoration: none;
+            display: inline-block;
+          }
+    </style>
+    <a href="index.html">Home</a>
+    <h1 style="margin-left: 30vh;">Deep Copy</h1>
+    <code>
+        <span class="const">const</span> deepCopy = <span class="function">(struct) =></span> Array.isArray(struct) ? struct.map(deepCopy) : <br>
+                             typeof struct === <span class="string">'object'</span> ? Object.fromEntries(Object.entries(struct).map(([k,v])=> [k,deepCopy(v)])) : <br>
+                             struct; <br> <br>
+
+        <span class="const">const</span> originalArray = [1,2,3]; <br>
+        <span class="const">const</span> originalObject = {a:1,b:2}; <br>
+        <span class="const">const</span> originalNestedObject = {a:[1,2,3],b:2}; <br>
+
+        <span class="assert">console.assert</span>(deepCopy(originalArray) !== originalArray); <br>
+        <span class="assert">console.assert</span>(deepCopy(originalObject) !== originalObject); <br>
+        <span class="assert">console.assert</span>(deepCopy(originalNestedObject) !== originalNestedObject); <br> <br>
+
+        <span class="log">console.log</span>(deepCopy(originalArray)); <br>
+        <span class="log">console.log</span>(deepCopy(originalObject)); <br>
+        <span class="log">console.log</span>(deepCopy(originalNestedObject)); <br>
+    </code>
+    <div class="return">
+    <p>Returns <br>
+        [ 1, 2, 3 ] <br>
+        { a: 1, b: 2 } <br>
+        { a: [ 1, 2, 3 ], b: 2 }</p>
+    </div>
+</body>
+</html>

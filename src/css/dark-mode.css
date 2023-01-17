@@ -1,0 +1,63 @@
+/* Light mode */
+:root {
+    --bg-color: #f8f8f8;
+    --text-color: black;
+    --link-color: blue;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  .sidenav {
+    margin-top: 7.5%;
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+  }
+
+  .row_two{
+    margin-top: 7.5%;
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 25vh;
+    overflow-x: hidden;
+  }
+
+  .row_two a:hover {
+      background-color: rgb(216, 157, 29);
+      color: black;
+  }
+
+  .sidenav a:hover {
+    background-color: rgb(216, 157, 29);
+    color: black;
+  }
+
+  .content {
+    margin-left: 200px;
+    padding-left: 20px;
+    font-size: 2em;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  a{
+    color: var(--link-color);
+    padding: 16px;
+    display: block;
+  }
+
+  button{
+    margin-left: 20px;
+  }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5.1</title>
+</head>
+<style>
+    body{
+        font-size:4vh;       
+    }
+    table{
+        margin-left: auto;
+        margin-right:auto;
+        width: 80%;
+    }
+</style>
+<body>
+    <div id="div" style="text-align: center;"></div>
+    <table id="resultsTable">
+        <tr>
+          <th style="padding-right: 20vw;">Property</th>
+          <th style="padding-right: 40vw;">Time (ms)</th>
+        </tr>
+      </table>
+    <script>
+// Bsp-HTML-Element
+const div = document.getElementById("div");
+div.innerHTML = '<strong>Performanzmessung von DOM-Operationen</strong> <p>Bitte aktualisieren Sie die Seite für eine neue Messung.</p>'
+// Table
+var table = document.createElement("table");
+var tbody = document.createElement("tbody");
+
+// insert
+["innerHTML", "innerText", "textContent", "outerHTML"].forEach(method => {
+    var start = performance.now();
+    div[method];
+    var time = (performance.now() - start) / 1000;
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    td1.innerHTML = method;
+    var td2 = document.createElement("td");
+    td2.innerHTML = time.toFixed(20);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tbody.appendChild(tr);
+});
+table.appendChild(tbody);
+document.body.appendChild(table);
+    </script>
+</body>
+</html>

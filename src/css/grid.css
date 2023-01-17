@@ -41,6 +41,7 @@ h4{
 @media screen and (min-width: 600px) {
     body {
         margin: 1em;
+        background-color: #f8f8f8;
     }
     .wrapper {
         grid-template-columns: 1fr 2fr; 

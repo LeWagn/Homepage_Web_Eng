@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task6</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            text-align: center;
+            font-family: Arial, sans-serif;
+          }
+          h1 {
+            margin-top: 50px;
+            font-size: 36px;
+            color: #333;
+          }
+          #input {
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 18px;
+            width: 50%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+          }
+          #input.invalid {
+            background-color: #ffcccc;
+            border-color: #ff0000;
+          }
+    </style>
+    <script>
+        function checkBrackets() {
+          var input = document.getElementById("input");
+          var openBrackets = document.getElementById("openBrackets").value;
+          var closeBrackets = document.getElementById("closeBrackets").value;
+          var stack = [];
+          var isValid = true;
+          for (var i = 0; i < input.value.length; i++) {
+            var c = input.value[i];
+            if (openBrackets.indexOf(c) !== -1) {
+              stack.push(c);
+            } else if (closeBrackets.indexOf(c) !== -1) {
+              if (stack.length == 0) {
+                isValid = false;
+                break;
+              }
+              var last = stack.pop();
+              var index = closeBrackets.indexOf(c);
+              if (openBrackets[index] !== last) {
+                isValid = false;
+                break;
+              }
+            }
+          }
+          if (stack.length > 0) {
+            isValid = false;
+          }
+          if (!isValid) {
+            input.classList.add("invalid");
+          } else {
+            input.classList.remove("invalid");
+          }
+          console.assert(isValid, "Brackets are not properly nested.");
+        }
+      </script>
+    </head>
+    <body>
+      <h1>Bracket Checker</h1>
+      <input type="text" id="input" oninput="checkBrackets()">
+      <br>
+      <label for="openBrackets">Open brackets:</label>
+      <input type="text" id="openBrackets" value="[{(">
+      <br>
+      <label for="closeBrackets">Close brackets:</label>
+      <input type="text" id="closeBrackets" value="]})">
+    </body>
+</html>

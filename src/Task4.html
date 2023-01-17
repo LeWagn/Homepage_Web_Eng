@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/grid.css"> 
+    <title>Task 4 (JavaScript)</title>
+</head>
+<style>
+    h3{
+        text-align: center;
+    }
+</style>
+<body>
+    <h1 class="heading" onclick="changeColor(this)">Task 4.1 Funktionen:</h1>
+    <h3>Task 4.1.1:</h3>
+    <h5>Schreiben Sie eine Funktion identity(), die ein Argument als Parameter entgegen nimmt und dieses als Ergebnis zurück gibt.</h5>
+        <code>function identity(x){<br> 
+            <span style="margin-left: 1em; color: purple">return</span> x <br> 
+        } <br> 
+        console.log(identity(5));</code>
+        <p>Returns 5.</p>
+    <script>
+       function identity(x){
+        return x
+       }
+       console.log(identity(5));
+    </script>
+    <h3>Task 4.1.2</h3>
+    <h5>Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.</h5>
+        <code>function identity_function(y){<br>
+            <span style="margin-left:1em; color: purple">return</span> identity(y)<br>
+        }<br>
+        console.log(identity_function(5));</code>
+        <p>Returns 5.</p>
+    <script>
+        function identity_function(y){
+            return identity(y)
+        }
+        console.log(identity_function(5));
+    </script>
+    <h3>Task 4.1.3</h3>
+    <h5>Schreiben Sie zwei binäre Funktionen add und mul, die Summe und Produkt berechnen.</h5>
+    <code> function add(a, b){<br>
+        <span style="margin-left:1em; color:purple">return</span> a + b;<br>
+    }<br>
+    console.log(add(4,4));<br>
+    <p>Returns 8.</p><br><br>
+    function mul(a, b){<br>
+        <span style="margin-left:1em; color:purple">return</span> a * b;<br>
+    }<br>
+        console.log(mul(4,4))</code>
+        <p>Returns 16.</p>
+    <script>
+        function add(a, b){
+            return a + b;
+        }
+        console.log(add(4,4));
+        function mul(a, b){
+            return a * b;
+        }
+        console.log(mul(4,4))
+    </script>
+    <h3>Task 4.1.4</h3>
+    <h5>Schreiben Sie eine Addier-Funktion addf(), so dass addf(x)(y) genau x + y zurück gibt. 
+        (Es haben also zwei Funktionsaufrufe zu erfolgen. addf(x) liefert eine Funktion, die auf y angewandt wird.)</h5>
+    <script>
+        function addf(x){
+            return function(y){
+                return x + y;
+            }
+        }
+        console.log(addf(3)(4));
+    </script>
+        <code>
+            function addf(x){<br>
+                <span style="margin-left:1em; color:purple">return</span> function(y){<br>
+                    <span style="margin-left:2em; color:purple">return</span> x + y;<br>
+                    <span style="margin-left:1em;">}</span><br>
+            }<br>
+            console.log(addf(3)(4));
+        </code>
+        <p>Returns 7.</p>
+    <h3>Task 4.1.5</h3>
+    <h5>Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) eine Funktion addf berechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist.</h5>
+    <script>
+        function applyf(binary){
+            return function(x){
+                return function(y){
+                    return binary(x,y);
+                }
+            }
+        }
+        console.log(addf=applyf(add));
+        console.log(addf(3)(4));
+        console.log(applyf(mul)(3)(4));
+    </script>
+    <code>
+        function applyf(binary){<br>
+            <span style="margin-left:1em; color:purple">return</span> function(x){<br>
+                <span style="margin-left:2em; color:purple">return</span> function(y){<br>
+                    <span style="margin-left:3em; color:purple">return</span> binary(x,y);<br>
+                <span style="margin-left:2em;">}</span><br>
+            <span style="margin-left:1em;">}</span><br>
+        }<br>
+        console.log(addf=applyf(add));<br>
+        console.log(addf(3)(4));<br>
+        console.log(applyf(mul)(3)(4));
+    </code>
+    <p>Returns 7 and 12 respectively</p>
+    <h1 class="heading" onclick="changeColor(this)">Task 4.3: Fibonacci</h1>
+    <script>
+        //fibonacci function
+        function fibonacci(n){
+            const cache = {};
+
+            function calcFibonacci(n){
+                if(cache[n]) return cache [n];
+                if(n<2) return n;
+                const result = calcFibonacci(n-1) + calcFibonacci(n-2);
+                cache[n] = result;
+                return result;
+            }
+            return calcFibonacci(n);
+        }
+        for (let i = 0; i <2000; i++) {
+            console.log(fibonacci(i));
+        }
+        let i =0;
+        let fib = fibonacci(i);
+
+        while(fib< Number.MAX_SAFE_INTEGER){
+            i++;
+            fib = fibonacci(i);
+        }
+        let num = 0;
+        let currentFib = fibonacci(num);
+        while(currentFib != fib){
+            num++;
+            currentFib = fibonacci(num);
+        }
+        //Nummer 1477 für Number, Nummer 79 für Integer.
+        console.log("Die größte Fibonacci Zahl, die sich als Integer speichern lässt ist:", fib, "dies entspricht der Nummer", num, "in der Fibonacci-Folge.");
+        while(fib < Number.MAX_VALUE){
+            i++;
+            fib = fibonacci(i);
+        }
+        console.log("Die größte Fibonacci Zahl, die sich als Number speichern lässt ist:", fib, "dies entspricht der Nummer", num, "in der Fibonacci-Folge.");
+        //Ausgabe der ersten 2000 Fibonacci Zahlen mit BigInt:
+        for (let i = 0; i <2000; i++) {
+            console.log(fibonacci(i));
+        }
+        //Die größte Fibonacci Zahl, die mit BigInt korrekt berechnet werden kann, kann hier nicht gezeigt werden.
+        //Die Schleife für die Ausgabe dieser Zahl würde laufen bis der Speicherplatz des Rechners aufgebraucht ist.
+    </script>
+    <code>
+        <span style="color: grey">//fibonacci function:</span><br>
+        function fibonacci(n){<br>
+            const cache = {};<br>
+<br>
+            function calcFibonacci(n){<br>
+                if(cache[n]) return cache [n];<br>
+                if(n<2) return n;<br>
+                const result = calcFibonacci(n-1) + calcFibonacci(n-2);<br>
+                cache[n] = result;<br>
+                return result;<br>
+            }<br>
+            return calcFibonacci(n);<br>
+        }<br>
+        for (let i = 0; i <2000; i++) {<br>
+            console.log(fibonacci(i));<br>
+        }<br>
+        <h3>Task 4.3.1:</h3>
+        let i =0;<br>
+        let fib = fibonacci(i);<br>
+<br>
+        while(fib< Number.MAX_SAFE_INTEGER){<br>
+            i++;<br>
+            fib = fibonacci(i);<br>
+        }<br>
+        let num = 0;<br>
+        let currentFib = fibonacci(num);<br>
+        while(currentFib != fib){<br>
+            num++;<br>
+            currentFib = fibonacci(num);<br>
+        }<br>
+        <span style="color: grey">//Nummer 79 für Integer</span><br>
+        console.log("Die größte Fibonacci Zahl, die sich als Integer speichern lässt ist:", fib, "dies entspricht der Nummer", num, "in der Fibonacci-Folge.");<br>
+        <h3>Task 4.3.2:</h3>
+        while(fib < Number.MAX_VALUE){<br>
+            i++;<br>
+            fib = fibonacci(i);<br>
+        }<br>
+        <span style="color: grey">//Nummer 1477 für Number.</span><br>
+        console.log("Die größte Fibonacci Zahl, die sich als Number speichern lässt ist:", fib, "dies entspricht der Nummer", num, "in der Fibonacci-Folge.");<br>
+        <h3>Task 4.3.3:</h3>
+        <span style="color: grey">//Ausgabe der ersten 2000 Fibonacci Zahlen mit BigInt:</span><br>
+        for (let i = 0; i <2000; i++) {<br>
+            console.log(fibonacci(i));<br>
+        }<br>
+        <h3>Task 4.3.4:</h3>
+        <span style="color: grey">//Die größte Fibonacci Zahl, die mit BigInt korrekt berechnet werden kann, kann hier nicht gezeigt werden.</span><br>
+        <span style="color: grey">//Die Schleife für die Ausgabe dieser Zahl würde laufen bis der Speicherplatz des Rechners aufgebraucht ist.</span>
+    </code>
+    
+    <script>
+        //Headings change color when clicked. Implemented in JS to allow on/off toggling.
+        var isOrange = [false, false, false, false];
+        function changeColor(element) {
+            var heading = element;
+            var index = Array.prototype.indexOf.call(document.getElementsByClassName("heading"), heading);
+            if(isOrange[index]){
+                heading.style.color = "black";
+                isOrange[index] = false;
+            } else {
+                heading.style.color = "orange";
+                isOrange[index] = true;
+            }
+        }
+    </script>
+</body>
+</html>

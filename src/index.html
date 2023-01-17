@@ -1,158 +1,51 @@
 <!DOCTYPE html>
-<html>
-<h1>Aufgabe 1.1.</h1>
-<ol>
-  <h4>1. Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?</h4>
-    <p>TBLs Proposal wurde vor allem mit dem Verweis auf mögliche Broken Links abgelehnt. Es wurde als Rückschritt angesehen. Weiterhin wurden die nicht vorhandene Zentrale Kontrolle und die strikte Verwendung von Text Protokollen statt verteilten Objekten genannt.</p>
-  <h4>2. Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</h4>
-    <p>Hauptsächlich durch das Ziel eine Wissensdatenbank und einen Wissensaustausch für das Gemeinwohl bereitzustellen sowie die Einbindung der Community in die Weiterentwicklung der Infrastruktur.</p>
-  <h4>3. Was wäre der Preis für die garantierte Verhinderung von "broken links"?</h4>
-  <p>Der Preis dafür keine "broken links", oder anders gesagt referentielle Integrität zu haben, wäre die Prüfung von jedem einzelnen Link, was sehr viele Rechenressourcen kosten würde.</p>
-</ol>
-<h1>Aufgabe 1.2. HTTP</h1>
-  <ol>
-    <li><h4>Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?</h4></li>
-    <p>Der http Status Code 200 steht für "OK", zugehörig zur Gruppe "Success", er informiert darüber, dass die Anfrage erfolgreich war.</p>
-    <li><h4>Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten?</h4></li>
-    <p>Status Code 301 steht für "Moved permanently", zugehörig zur Gruppe "Redirect" zeigt er an, dass die angefragte Ressource verschoben wurde. Die neue URL sollte im Location Field bereitgestellt werden.</p>
-    <li><h4>Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie dagegen tun?</h4></li>
-    <p>Http Code 400 steht für "Bad Request" und zeigt and, dass der Server die Anfrage nicht bearbeiten kann oder wird. Status Code 400 ist zugehörig zur Gruppe "Client Error" und liegt häufig darin begründet, dass die Anfragesyntax fehlerhaft ist oder ein irreführendes Routing der Anfrage vorliegt.
-      <br> Als Nutzer sollte ich meine Eingabe überprüfen, die Seite neu laden und meinen DNS Cache bereinigen. </p>
-    <li><h4>Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun?</h4></li>
-    <p>Der Status Code 403 steht für "Forbidden", ebenfalls zugehörig zur Kategorie "Client Error" zeigt er an, dass der Server die Anfrage versteht, sich jedoch weigert diese zu autorisieren.
-      <br>Häufige Ursachen für Code 403 sind fehlerhafte Security Plugins, korrupte .htaccess Dateien, oder fehlerhafte Zugriffsrechte auf dem angefragten Server.
-      <br>Lösungsansätze für Endnutzer sind ähnlich wie die o.g. Ansätze für Code 400.
-    </p>
-    <li><h4>In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable sein. Wie könnten Sie dafür eine Lösung angehen?</h4></li>
-    <p></p>
-  </ol>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dark-mode.css" media="none" onload="if(media!='all')media='all'">
+    <title>Solution Navigator</title>
+</head>
+<style>
+    a{
+        display: flex;
+        align-items: center;
+        margin: 1em;
+    }
+</style>
+<body>
+    <div class="content">
+    <h1>Solution Navigator</h1>
+    </div>
+    <div class="sidenav">
+        <a href="./Task1.html">Task 1</a>
+        <a href="./Task2.html">Task 2</a>
+        <a href="./Task2.2.html">Task 2.2</a>
+        <a href="./Task2.2.2.html">Task 2.2.2</a>
+        <a href="./Task 3.1.html">Task 3.1</a>
+        <a href="./Task 3.2.html">Task 3.2</a>
+        <a href="./Task 3.3.html">Task 3.3</a>
+        <a href="./Task4.html">Task 4</a>
+        <a href="./Task5.html">Task5</a>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+    <div class ="row_two">
+        <a href="Task6.html">Task 6</a>
+    </div>
+    <script>
+        function toggleDarkMode() {
+            const root = document.documentElement;
+            if (root.style.getPropertyValue('--bg-color') === 'white') {
+                root.style.setProperty('--bg-color', 'black');
+                root.style.setProperty('--text-color', 'white');
+                root.style.setProperty('--link-color', 'orange');
 
-<h1>Aufgabe 1.3. HTML-Literatur</h1>
-<ol>
-  <b><li>Was ist HTML?</li></b>
-  <p>Hyper Text Markup Language ist eine textbasierte Auszeichnungssprache, die zur Strukturierung von Dokumenten (Texten, Hyperlinks, Bildern, ...) genutzt wird.
-    <br>HTML wurde von TBL entwickelt und wird heute vom W3C und der WHATWG weiterentwickelt. Die aktuelle Version von HTML ist HTML5.
-    <br>Obwohl Dokumente mit HTML strukturiert, angepasst und <b><span style = background-color:blue>akzentuiert</span></b> werden können, wird die visuelle Darstellung durch den Webbrowser und Gestaltungsvorlagen wie CSS bestimmt.
-  </p>
-  <b><li>Wie kann man eine geschachtelte geordnete Liste der Schachtelungstiefe 3 erzeugen?</li></b>
-  <p></p>
-    <ol>
-      <li>Zuerst öffnet man eine Liste mit den tags für eine geordnete Liste und ein Listen-Item "< ol> < li>"
-        <ol><li>Statt diese Tags direkt zu schließen, fügt man erneut zwei öffnende tags für eine neue geordnete Liste ein.</li>
-          <ol><li>Schließlich schachtelt man diese Liste erneut wie zuvor und fügt dann die closing tags pro geöffneter Liste ein, in diesem Fall also jeweils dreimal "< /ol>" und "< /li>"</li>
-            <li>Durch Hinzufügen von "< li>" tags können beliebig viele Unterpunkte zu den verschiedenen Tiefen der Liste hinzugefügt werden.</li>
-          </ol>
-       </ol>
-    </li></ol>
-  <b><li>Wie ist eine HTML-Tabelle aufgebaut?</li></b>
-  <p>Eine HTML Tabelle besteht aus Zellen innerhalb von Reihen und Spalten.
-    <br>Sie wird mit dem Tag "< table>" erstellt. Neue Zeilen werden mit dem "< tr>" tag eingefügt. Zellen mit dem "< td>" tag (td = table data).
-    <br>Überschriften werden mithilfe von sog. Header Zellen ("< th>") erstellt.   
-    <br>Ein Beispiel für eine HTML Tabelle ist unten bei der Aufgabe 1.4 beigefügt.</p>
-  <b><li>Welche Konventionen sollte man bei Pfaden und Dateinamen beachten?</li></b>
-  <p>Pfade beschreiben den Ort einer Datei innerhalb der Ordnerstruktur der Website.
-    Man unterscheidet zwischen Relativen und Absoluten Pfaden.
-    <br>Ein absoluter Pfad ist die volle URL zu einer Datei. Relative Pfade zeigen hingegen auf den Standort der Datei in Relation zum aktuellen Standort. Relative Pfade sollten wenn möglich genutzt werden.
-    <br>Als praktisches Beispiel möchte ich hier auf Aufgabe 1.4 verweisen. Das verwendete Bild von TBL befindet sich in einem Unterordner "img", ich rufe es über <span style = color:blueviolet>src </span>=  <span style = color:cyan >"img/tbl.jpg"</span> ab.
-    <br>Ich habe mich also für einen relativen Pfad entschieden, da ich so nicht an die Basis-URL des Bildes gebunden bin.
-  <p> In Bezug auf Dateinamen gilt wie üblich in der Programmierung: Vermeidung von Sonderzeichen mit Ausnahme des Unterstrichs "_".
-    <br>Dateien sollten weiterhin die Endung .html oder .htm erhalten. Die Länge der Dateinamen sollten je nach Web-Server eine Länge von 256 Zeichen nicht überschreiten.
-  </p>
-  </p>
-  <b><li>Wie baut man in HTML ein Menü?</li></b>
-  <p>Mit purem HTML sollte man generell kein Menü bauen, hier empfiehlt sich eher eine Mischung aus JavaScript, CSS und HTML oder pures CSS.
-    <br>Es ist zwar möglich ein Menü nur mit HTML (mithilfe des "< menu>" tags) zu bauen, da dies aber aktuell nur im Firefox Browser unterstützt wird halten sich die Anwendungsfälle in Grenzen.
-  </p>
-  <b><li>Welche Attribute sollte man bei Bildern wie verwenden?</li></b>
-  <p>Bei der Verwendung von Bildern mithilfe des "< img>" tags werden zwei Attribute Benötigt.
-  <br>1. <span style = color:blueviolet>src</span> spezifiziert den Pfad zum Ort an dem das Bild gespeichert ist.
-  <br>2. <span style = color:brown>alt</span> spezifiziert einen alternativen Text, der angezeigt wird wenn das Bild nicht angezeigt werden kann.
-  <br>Als Randnotiz sei gesagt, dass man stets einen alternativen Text für Bilder angeben sollte, damit z.B. Menschen mit eingeschränktem Sehvermögen ebenfalls in der Lage sind den dargestellten Inhalt der Seite wahrzunehmen. (z.B. in Audio Form).
-  <br>Weitere optionale Attribute sind z.B. "height" welches die Höhe des Bildes in Pixeln angibt, width (selbsterklärend) und "loading", welches festlegt ob der Browser das Bild unmittelbar oder erst bei Erfüllung einer bestimmten Bedingung laden soll.</p>
-  </ol>
-
-<h1>Aufgabe 1.4. HTML Wireframe:</h1>
-<h1>Übung 1.2: Inventors of the Web</h1>
-    <ul>
-        <li> <b style="background-color:yellow"><u>Tim Berners-Lee:</u></b> WWW, HTTP, HTML, URI </li>
-        <li> <b>Hakom Lie and Bert Bos:</b> CSS </li>
-        <li> <b>Brendan Eich:</b> JavaScriptS </li>
-    </ul>
-    <hr>
-    <br>
-    <h2>Inventors of the WWW</h2>
-    <table border="1" style="border: 10px outset grey">
-        <tr>
-            <th colspan="4">Inventors of the WWW</th>
-        </tr>
-        <tr>
-            <th>WWW</th>
-            <th>HTML</th>
-            <th>CSS</th>
-            <th>JavaScript</th>
-        </tr>
-        <tr>
-            <td style="background-color:yellow">Tim Berners-Lee</td>
-            <td style="background-color:yellow">Tim Berners-Lee</td>
-            <td>Hakom Lie and Bert Bos</td>
-            <td>Brendan Eich</td>
-        </tr>
-    </table>
-    <br>
-    <hr>
-    <table>
-        <tr>
-            <th colspan="3">Inventors of the WWW <hr> </th>
-        </tr>
-        <tr>
-            <th>HTML</th>
-            <th>|</th>
-            <th>JavaScript</th>
-        </tr>
-        <tr>
-            <td><img src="src/img/tbl.jpg" alt ="Image of TBL" width="114" height="154"/></td>
-            <th>|</th>
-            <td><img src="src/img/eich.jpg" alt = "Image of Brendan Eich" width="117" height="155"/></td>   
-        </tr>
-        <tr>
-            <td><label style="background-color:yellow">Tim Berners-Lee</label></td>
-            <td>|</td>
-            <td>Brendan Eich</td>
-        </tr>
-    </table>
-    <br>
-    <hr>
-    <h1>Aufgabe 2.1 CSS Selektoren und CSS Farben</h1>
-    <h4>Berechnen Sie die Spezifität folgender CSS-Selektoren:
-    <h4 style="font-style:oblique">A= Ids B= (Pseudo) Klassen & Attribute C=(Pseudo) Elemente
-    </h4>
-
-    <div class="ol">
-      <ol>
-      <li class="list"><code>div div div:focus .inner </code><span class="items">A = 0, B = 2, C = 3</span></li>
-      <li class="list"><code>h1+div.main </code><span class="items">A = 0, B = 1, C = 2</span></li>
-      <li class="list"><code>div a:link[href*='h-brs'] </code><span class="items">A = 0, B = 2, C = 2</span></li>
-      <li class="list"><code>nav > a:hover::before </code><span class="items">A = 0, B = 1, C = 3</span></li>
-      <li class="list"><code>ul#primary-nav li.active </code><span class="items">A = 1, B = 1, C = 2</span></li>
-    </ol>
-    <h4>Rechnen Sie folgende RGB-Werte in HSL-Werte um:</h4>
-      <div class="ol">
-        <ol>
-        <li class="list"><code>#ffffff</code><span class="items">hsl(0, 0%, 100%)</span></li>
-        <li class="list"><code>#000</code><span class="items">hsl(0, 0%, 0%)</span></li>
-        <li class="list"><code>#ab0978</code><span class="items">hsl(319, 90%, 35%)</span></li>
-        <li class="list"><code>rgb(127,255,33)</code><span class="items">hsl(95, 100%, 56.5%)</span></li>
-        <li class="list"><code>rgba(255,127,33,0.8)</code><span class="items">hsla(25, 100%, 56.5%, 0.8)</span></li>
-      </ol>
-    <style>
-      .items{
-        float: right;
-        background-color: transparent;
-        margin-right: 20%;
-      }
-      .list{
-        background-color: #f9f2f469;
-        color:#c7254e
-      }
-    </style>
+            } else {
+                root.style.setProperty('--bg-color', 'white');
+                root.style.setProperty('--text-color', 'black');
+                root.style.setProperty('--link-color', 'purple');
+            }
+          }
+    </script>
+</body>
 </html>
