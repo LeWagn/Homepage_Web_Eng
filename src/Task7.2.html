@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7.2</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            padding-bottom: 5vh;
+        }
+        ol {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        li {
+            background-color: #dda2358e;
+            font-size: 2vh;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #ccc;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+    <script>
+    Promise.all([
+    fetch('data/stopwords.txt').then(res => res.text()),
+    fetch('data/Plagiatsresolution.txt').then(res => res.text())
+    ]).then(([stopwords, text]) => {
+    stopwords = stopwords.split('\n');
+    text = text.split(' ');
+    text = text.filter(word => !stopwords.includes(word));
+    let wordFrequency = {};
+    text.forEach(word => {
+        wordFrequency[word] = (wordFrequency[word] || 0) + 1;
+    });
+    let sortedWordFrequency = Object.keys(wordFrequency)
+        .sort((a, b) => wordFrequency[b] - wordFrequency[a]);
+    let top3Words = sortedWordFrequency.slice(0, 3);
+    console.log(top3Words);
+
+    // Output
+    let topWords = top3Words;
+    let resultsList = document.getElementById("results");
+    for (let i = 0; i < topWords.length; i++) {
+    let listItem = document.createElement("li");
+    listItem.appendChild(document.createTextNode(topWords[i]));
+    resultsList.appendChild(listItem);
+    }
+    });     
+    </script>
+    <h1>Die am häufigsten verwendeten Begriffe sind:</h1>
+    <ol id="results" style="width:100%">
+    </ol>
+</body>
+</html>

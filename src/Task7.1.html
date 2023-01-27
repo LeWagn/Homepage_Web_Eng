@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7.1</title>
+</head>
+<body>
+    <style>
+        h4{
+            background-color: rgb(0, 0, 0);
+            color: orange;
+            box-shadow: 10px 10px 15px rgba(90, 59, 0, 0.678);
+            
+        }
+        body{
+            padding-left: 30%;
+            padding-right: 20%;
+            background-color: #f2f2f2;
+        }
+    </style>
+    <h4>7.1.1:</h4>
+    <script>
+        function identity_function(x) {
+            return function() {
+              return x;
+            };
+          }
+    </script>
+    <code>
+        function identity_function(x) {<br>
+            return function() {<br>
+              return x;<br>
+            };<br>
+          }
+    </code>
+    <h4>7.1.2</h4>
+    <script>
+        function addf(x) {
+            return function(y) {
+              return x + y;
+            }
+          }
+    </script>
+    <code>
+        function addf(x) {<br>
+            return function(y) {<br>
+              return x + y;<br>
+            }<br>
+          }
+    </code>
+    <h4>7.1.3</h4>
+    <script>
+        function applyf(binaryFunc) {
+            return function(x) {
+              return function(y) {
+                return binaryFunc(x, y);
+              };
+            };
+          }
+    </script>
+    <code>
+        function applyf(binaryFunc) {<br>
+            return function(x) {<br>
+              return function(y) {<br>
+                return binaryFunc(x, y);<br>
+              };<br>
+            };<br>
+          }
+    </code>
+    <h4>7.1.4</h4>
+    <script>
+        function curry(binaryFunc, x) {
+            return function(y) {
+              return binaryFunc(x, y);
+            };
+          }
+    </script>
+    <code>
+        function curry(binaryFunc, x) {<br>
+            return function(y) {<br>
+              return binaryFunc(x, y);<br>
+            };<br>
+          }
+    </code>
+    <h4>7.1.5</h4>
+    <p>Var 1:</p>>
+    <script>
+        let add1 = addf(1);
+        let inc = add1;
+        console.log(inc(5));
+    </script>
+    <code>
+        let add1 = addf(1);<br>
+        let inc = add1;<br>
+        console.log(inc(5));  // 6
+    </code>
+    <p>Var 2:</p>>
+    <code>
+        let inc = applyf((x, y) => x + y)(1);<br>
+        console.log(inc(5));  // 6
+    </code>
+    <p>Var 3:</p>
+    <code>
+        let inc = curry((x, y) => x + y, 1);<br>
+        console.log(inc(5));  // 6
+    </code>
+    <h4>7.1.6</h4>
+    <script>
+        function methodize(binaryFunc) {
+            return function(y) {
+                return binaryFunc(this, y);
+            }
+        }
+    </script>
+    <code>
+        function methodize(binaryFunc) {<br>
+            return function(y) {<br>
+                return binaryFunc(this, y);<br>
+            }<br>
+        }
+    </code>
+    <h4>7.1.7</h4>
+    <script>
+        function demethodize(unaryMethod) {
+            return function(x, y) {
+                return unaryMethod.call(x, y);
+            }
+        }
+    </script>
+    <code>
+        function demethodize(unaryMethod) {<br>
+            return function(x, y) {<br>
+                return unaryMethod.call(x, y);<br>
+            }<br>
+        }
+    </code>
+    <h4>7.1.8</h4>
+    <script>
+        function twice(binaryFunction) {
+            return function(x) {
+                return binaryFunction(x, x);
+            }
+        }
+        
+        var double = twice(function(x, y) { return x + y });
+        console.log(double(11));
+        
+        var square = twice(function(x, y) { return x * y });
+        console.log(square(11));
+    </script>
+    <code>
+        function twice(binaryFunction) {<br>
+            return function(x) {<br>
+                return binaryFunction(x, x);<br>
+            }<br>
+        }<br>
+        <br>
+        var double = twice(function(x, y) { return x + y });<br>
+        console.log(double(11)); // 22<br>
+        <br>
+        var square = twice(function(x, y) { return x * y });<br>
+        console.log(square(11)); // 121
+    </code>
+    <h4>7.1.9</h4>
+    <script>
+        function composeu(func1, func2) {
+            return function(x) {
+                return func2(func1(x));
+            }
+        }
+    </script>
+    <code>
+        function composeu(func1, func2) {<br>
+            return function(x) {<br>
+                return func2(func1(x));<br>
+            }<br>
+        }
+    </code>
+    <h4>7.1.10</h4>
+    <script>
+        function composeb(a, b) {
+            return function(x, y, z) {
+                return a(b(x, y), z);
+            }
+        }
+    </script>
+    <code>
+        function composeb(a, b) {<br>
+            return function(x, y, z) {<br>
+                return a(b(x, y), z);<br>
+            }<br>
+        }
+    </code>
+    <h4>7.1.11</h4>
+    <script>
+        function once(fn) {
+            let called = false;
+            return function() {
+                if (!called) {
+                    called = true;
+                    return fn.apply(this, arguments);
+                }
+                throw new Error("Funktion kann nur einmal aufgerufen werden.");
+            }
+        }
+    </script>
+    <code>
+        function once(fn) {<br>
+            let called = false;<br>
+            return function() {<br>
+                if (!called) {<br>
+                    called = true;<br>
+                    return fn.apply(this, arguments);<br>
+                }<br>
+                throw new Error("Function can only be called once.");<br>
+            }<br>
+        }
+    </code>
+    <h4>7.1.12</h4>
+    <script>
+        function counterf(start) {
+            let count = start;
+            function inc() {
+              return ++count;
+            }
+            function dec() {
+              return --count;
+            }
+            return { inc, dec };
+          }
+    </script>
+    <code>
+        function counterf(start) {<br>
+            let count = start;<br>
+            function inc() {<br>
+              return ++count;<br>
+            }<br>
+            function dec() {<br>
+              return --count;<br>
+            }<br>
+            return { inc, dec };<br>
+          }
+    </code>
+    <h4>7.1.13</h4>
+    <script>
+        function revocable(func) {
+            return {
+                invoke: function(x) {
+                    if(!this.revoked) {
+                        return func(x);
+                    } else {
+                        throw "Error: Funktion wurde zurückgenommen und kann nicht mehr aufgerufen werden.";
+                    }
+                },
+                revoke: function() {
+                    this.revoked = true;
+                }
+            }
+        }
+    </script>
+    <code>
+        function revocable(func) {<br>
+            return {<br>
+                invoke: function(x) {<br>
+                    if(!this.revoked) {<br>
+                        return func(x);<br>
+                    } else {<br>
+                        throw "Error: Funktion wurde zurückgenommen und kann nicht mehr aufgerufen werden.";<br>
+                    }<br>
+                },<br>
+                revoke: function() {<br>
+                    this.revoked = true;<br>
+                }<br>
+            }<br>
+        }
+    </code>
+    <h4>7.1.14</h4>
+    <script>
+        function func14() {
+            let data = [];
+            return {
+              get: function(index) {
+                return data[index];
+              },
+              store: function(index, value) {
+                data[index] = value;
+              },
+              append: function(value) {
+                data.push(value);
+              }
+            }
+          }
+    </script>
+    <code>
+        function func14() {<br>
+            let data = [];<br>
+            return {<br>
+              get: function(index) {<br>
+                return data[index];<br>
+              },<br>
+              store: function(index, value) {<br>
+                data[index] = value;<br>
+              },<br>
+              append: function(value) {<br>
+                data.push(value);<br>
+              }<br>
+            }<br>
+          }
+    </code>
+</body>
+</html>

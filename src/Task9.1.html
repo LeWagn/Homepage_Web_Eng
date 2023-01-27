@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9.1:</title>
+</head>
+<body>
+    <style>
+        body{
+            align-self: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            letter-spacing: 0.15em;
+            background-color: #f2f2f2;
+        }
+        .scale-animation {
+            transition: transform 0.5s;
+        }
+        .scale-animation:hover {
+            transform: scale(2);
+        } 
+        .scale-animation:not(:hover) {
+            transform: scale(1);
+        }
+        svg{
+            display: block;
+            margin: auto;
+            padding-top: 10%;
+        }
+        h1{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <h1>SVG</h1>
+    <svg width="400" height="400" class="scale-animation">
+        <rect width="400" height="400" style="fill:#cb798d;stroke:white;stroke-width:8"/>
+        <text x="40" y="80" style="font-size:64px;fill:white;">Use</text>
+        <line x1="40" y1="104" x2="360" y2="104" style="stroke:white;stroke-width:8"/>
+        <text x="40" y="200" style="font-size:64px;fill:white;">The</text>
+        <line x1="40" y1="224" x2="360" y2="224" style="stroke:white;stroke-width:8"/>
+        <text x="40" y="320" style="font-size:64px;fill:white;">Platform</text>
+        <line x1="40" y1="344" x2="360" y2="344" style="stroke:white;stroke-width:8"/>
+      </svg>
+    </body>
+  </html>
+</body>
+</html>
