@@ -1,0 +1,77 @@
+:root {
+    --bg-color: #f2f2f2;
+    --text-color: orange;
+    --link-color: orange;
+  }
+.Header{
+    font-family: sans-serif;
+    text-align: center;
+    flex-basis: 40%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 2.5em;
+    width: 40%;
+    margin-top: 22.5vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    height: 15vh;
+    margin-left: 5%;
+    margin-right: 7.5%;
+    font-size: 2vh;
+}
+.Links{
+    flex-basis: 60%;
+    margin-right: 12.5%;
+    border-radius: 2.5em;
+    margin-top: 22.5vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    height: 15vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 2vh;
+}
+a{
+    color: var(--link-color);
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    margin-top: 5vh;
+    margin-right: 2vw;
+}
+label{
+    display: block;
+    background: rgba(200, 200, 200, 0.6);
+    border-radius: 100px;
+    width: 300px;
+    height: 100px;
+    position: relative;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 50), inset 0px -5px 15px rgba (255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: 0.3s;
+}
+label:after{
+    background: linear-gradient(180deg, #f8c480,orange);
+    border-radius: 180px;
+    content: "";
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+input:checked + label{
+    background: #1b1b1b;
+}
+input:checked + label:after{
+    left: 185px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, rgb(99, 99, 99), #3f3f3f);
+}

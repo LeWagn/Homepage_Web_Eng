@@ -30,6 +30,7 @@
             font-family: Arial, sans-serif;
             margin-left: 60vh;
             margin-right: auto;
+            padding-top: 10vh;
             width: 80%;
           }
         h1 {
@@ -63,21 +64,7 @@
         p{
             margin: 0;
         }
-        a{
-            background-color:  rgb(216, 157, 29);
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 1vh;
-            cursor: pointer;
-            width: 3%;
-            text-align: start;
-            text-decoration: none;
-            display: inline-block;
-          }
     </style>
-    <a href="index.html">Home</a>
     <h1 style="margin-left: 30vh;">Deep Copy</h1>
     <code>
         <span class="const">const</span> deepCopy = <span class="function">(struct) =></span> Array.isArray(struct) ? struct.map(deepCopy) : <br>

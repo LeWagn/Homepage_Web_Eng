@@ -4,43 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Functional Programming</title>
+    <title>Task 8</title>
+    <link rel="stylesheet" href="./css/global_layout.css">
 </head>
-<style>
-    .Header{
-        font-family: sans-serif;
-        text-align: center;
-        flex-basis: 30%;
-        background-color: rgba(0, 0, 0, 0.6);
-        border-radius: 10em;
-        color: orange;
-
-    }
-
-    .Links{
-        align-self: flex-end;
-        flex-basis: 70%;
-        padding-left:0.5em;
-        border-radius: 0.5em;
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    a{
-        color: orange;
-    }
-
-    body{
-        background-color: #f8f8f8;
-        display: flex;
-    }
-</style>
 <body>
     <div class="Header">
-    <h1 onclick="color: orange";>Asynchrones JavaScript</h1>
+    <h1>Asynchrones JavaScript</h1>
+    <a href="index.html" id="home_btn"style="background-color:  rgb(216, 157, 29); color: white; padding: 16px 30px 16px 16px; margin: 16px 0; border: none; border-radius: 1vh; cursor: pointer; width: 7%; text-align: start; text-decoration: none; display: inline-block;">Home</a>
     </div>
     <div class="Links">
-    <a href="./Task8.1.html"><h1>Task: Promises</h1></a>
-    <a href="./Task8.2.html"><h1>Task: async/await</h1></a>
+    <a href="./Task8.1.html" style="text-align:center;"><h1>Task: Promises</h1></a>
+    <a href="./Task8.2.html" style="text-align:center;"><h1>Task: Async/Await</h1></a>
     </div>
+    <input type="checkbox" id="darkmode" onclick="toggleDarkMode()">
+    <label for="darkmode"></label>
+    <script>
+        window.onload=toggleDarkMode;
+        function toggleDarkMode() {
+            const root = document.documentElement;
+            if (root.style.getPropertyValue('--bg-color') === '#f2f2f2') {
+                root.style.setProperty('--bg-color', 'rgba(0, 0, 0, 0.6)');
+                root.style.setProperty('--text-color', 'white');
+                root.style.setProperty('--link-color', 'white');
+
+            } else {
+                root.style.setProperty('--bg-color', '#f2f2f2');
+                root.style.setProperty('--text-color', 'orange');
+                root.style.setProperty('--link-color', 'orange');
+            }
+          }
+    </script>
 </body>
 </html>

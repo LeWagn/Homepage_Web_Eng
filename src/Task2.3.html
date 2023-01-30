@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            text-align: center;
+            background-color: #b2d6d1
+        }
+        h1{
+            font-family:sans-serif
+        }
+        p{
+            font-family:sans-serif
+        }
+        .form-rows{
+            position: static;
+            display: block;
+        }
+        .master-div-style{
+            margin: auto;
+            width: 800px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px 10px 10px 10px;
+        }
+        .fields{
+            display: inline-block;
+            text-align: left;
+            width: 48%;
+            vertical-align: middle;
+        }
+        .labels{
+            display:inline-block;
+            text-align: right;
+            width: 40%;
+            padding: 5px;
+            vertical-align: top;
+            margin-top: 10px;
+        }
+        .input-fields{
+            height:20px;
+            width: 280px;
+            padding: 5px;
+            margin: 10px;
+            border: 1px solid darkgray;
+            border-radius: 4px;
+        }
+        .dropdown{
+            margin-left: 10px;
+            height: 35px;
+            width: 140px;
+            padding: 5px;
+            margin: 15px, 10px, 10px, 10px;
+            border: 1px solid darkgray;
+            border-radius: 4px;
+        }
+        .radio{
+            position: relative;
+            left: -43px;
+            margin-left: 15px;
+            display: block;
+            padding-bottom: 10px;
+        }
+        .user-selection{
+            float: left;
+            margin-right: 5px;
+        }
+        .button{
+            font-size: 1em;
+            background-color: #96cfc8;
+            color:white;
+            border: 0px solid;
+            border-radius: 4px;
+            height: 40px;
+            width: 80px;
+            margin: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/surveyform.css">
+</head>
+<body>
+<main>
+    <h1 id="title">Survey Form</h1>
+    <div class="master-div-style">
+        <p id="description">Let us know how we can improve freeCodeCamp</p>
+        <div class="form-rows">
+            <div class="labels">
+                <label for="name" id="name-label">* Name</label>
+            </div>
+            <div class="fields">
+                <input type="text" id="name" class="input-fields" placeholder="Enter your name" required>
+            </div>
+        </div>
+        <div class="form-rows">
+            <div class="labels">
+                <label for="email" id="email-label">* Email</label>
+            </div>
+            <div class="fields">
+                <input type="email" id="email" class="input-fields" placeholder="Enter your Email address" required>
+            </div>
+        </div>
+        <div class="form-rows">
+            <div class="labels">
+                <label for="number" id="number-label">* Age</label>
+            </div>
+            <div class="fields">
+                <input type="number" id="number" class="input-fields" placeholder="Age" min="1" max="140" required>
+            </div>
+        </div>
+        <div class="form-rows">
+            <div class="labels">
+                <label for="dropdown" id="dropdown-label">Which option best describes your current Role?</label>
+            </div>
+            <div class="fields">
+                <select name="Role" id="dropdown" class="dropdown">
+                    <option value="student">Student</option>
+                    <option value="postgrad">Postgrad</option>
+                    <option value="employee">Employee</option>
+                    <option value="freelancer">Freelancer</option>
+                    <option value="employer">Employer</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-rows">
+            <div class="labels">
+                <label for="recommendation">* How likely is it that you would recommend freeCodeCamp to a friend?</label>
+            </div>
+            <div class="fields">
+                <ul id="recommendation" style="list-style:none;">
+                    <li class="radio">
+                        <label>
+                            <input name="likeliness-radio" type="radio" value="1" vlass="user-selection">
+                            Definitely
+                        </label>
+                    </li>
+                    <li class="radio">
+                        <label>
+                            <input name="likeliness-radio" type="radio" value="2" vlass="user-selection">
+                            Maybe
+                        </label>
+                    </li>
+                    <li class="radio">
+                        <label>
+                            <input name="likeliness-radio" type="radio" value="3" vlass="user-selection">
+                            Not sure
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-rows">
+            <div class="labels">
+                <label for="dropdown" id="dropdown-label">What do you like most in FCC:</label>
+            </div>
+            <div class="fields">
+                <select name="Preference" id="dropdown" class="dropdown">
+                    <option value="default">Select an option</option>
+                    <option value="css">The CSS courses</option>
+                    <option value="html">The HTML courses</option>
+                    <option value="js">The JS courses</option>
+                    <option value="examples">The Examples</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-rows">
+            <div class="labels">
+                <label for="feedback">
+                    Things that should be improved in the future
+                    <br>
+                    (Check all that apply)
+                </label>
+            </div>
+            <div class="fields">
+                <ul id="feedback" style="list-style: none;">
+                    <li class="radio">
+                        <label>
+                            <input name="feedback-check" value="1" type="checkbox" class="user-selection">
+                            Front-End Projects
+                        </label>
+                    </li>
+                    <li class="radio">
+                        <label>
+                            <input name="feedback-check" value="1" type="checkbox" class="user-selection">
+                            Back-End Projects
+                        </label>
+                    </li>
+                    <li class="radio">
+                        <label>
+                            <input name="feedback-check" value="1" type="checkbox" class="user-selection">
+                            Data Visualization
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--Not mandatory but the survey felt incomplete without a Submit button.-->
+        <button class="button" id="submit" type="submit">Submit</button>
+    </form>
+    </div>
+</main>
+</body>
+</html>
+

@@ -1,8 +1,7 @@
-/* Light mode */
 :root {
-    --bg-color: #f8f8f8;
+    --bg-color: #f2f2f2;
     --text-color: black;
-    --link-color: blue;
+    --link-color: rgb(255, 255, 255);
   }
   
   * {
@@ -10,25 +9,35 @@
   }
 
   .sidenav {
-    margin-top: 7.5%;
-    height: 100%;
-    width: 200px;
+    margin-top: 12.5%;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     overflow-x: hidden;
+    width: 40%;
+    height: 50%;
+    margin-left: 5%;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0.5em;
   }
 
   .row_two{
-    margin-top: 7.5%;
-    height: 100%;
-    width: 200px;
+    margin-top: 12.5%;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 25vh;
     overflow-x: hidden;
+    width: 40%;
+    height: 50%;
+    margin-left: 42.5%;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0.5em;
   }
 
   .row_two a:hover {
@@ -42,9 +51,11 @@
   }
 
   .content {
-    margin-left: 200px;
-    padding-left: 20px;
+    display:inline-flex;
     font-size: 2em;
+    width: 60%;
+    margin-left: 35%;
+    margin-right: 40%;
   }
 
   body {
@@ -56,8 +67,48 @@
     color: var(--link-color);
     padding: 16px;
     display: block;
+    width: auto;
+    padding-left: 40%;
+    padding-right: 40%;
+    margin: 1em;
+    font-size: 2.5vh;
   }
-
-  button{
-    margin-left: 20px;
+  label{
+    display: block;
+    background: rgba(200, 200, 200, 0.6);
+    border-radius: 100px;
+    width: 200px;
+    height: 100px;
+    position: relative;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 50), inset 0px -5px 15px rgba (255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: 0.3s;
   }
+  label:after{
+    background: linear-gradient(180deg, #f8c480,orange);
+    border-radius: 190px;
+    content: "";
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+input:checked + label{
+    background: #1b1b1b;
+}
+input:checked + label:after{
+    left: 195px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, rgb(99, 99, 99), #3f3f3f);
+}
+.dm_toggle{
+  margin-left: 30vh;
+}

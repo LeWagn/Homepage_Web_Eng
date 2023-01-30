@@ -8,11 +8,25 @@
     <title>Task 4 (JavaScript)</title>
 </head>
 <style>
-    h3{
+    h3, h1{
         text-align: center;
-    }
+        background-color: rgb(0, 0, 0);
+        color: orange;
+        box-shadow: 10px 10px 15px rgba(90, 59, 0, 0.678);
+            
+        }
+        body{
+            padding-left: 25%;
+            padding-right: 25%;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        code{
+            font-size: larger;
+        }
 </style>
 <body>
+    <a href="index.html" id="home_btn"style="background-color:  rgb(216, 157, 29); color: white; padding: 16px 0px 16px 16px; margin: 16px 0; border: none; border-radius: 1vh; cursor: pointer; width: 7%; text-align: start; text-decoration: none; display: inline-block;">Home</a>
     <h1 class="heading" onclick="changeColor(this)">Task 4.1 Funktionen:</h1>
     <h3>Task 4.1.1:</h3>
     <h5>Schreiben Sie eine Funktion identity(), die ein Argument als Parameter entgegen nimmt und dieses als Ergebnis zurück gibt.</h5>
@@ -203,7 +217,6 @@
         <span style="color: grey">//Die größte Fibonacci Zahl, die mit BigInt korrekt berechnet werden kann, kann hier nicht gezeigt werden.</span><br>
         <span style="color: grey">//Die Schleife für die Ausgabe dieser Zahl würde laufen bis der Speicherplatz des Rechners aufgebraucht ist.</span>
     </code>
-    
     <script>
         //Headings change color when clicked. Implemented in JS to allow on/off toggling.
         var isOrange = [false, false, false, false];

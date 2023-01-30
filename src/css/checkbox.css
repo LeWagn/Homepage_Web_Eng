@@ -38,13 +38,12 @@
 
 img{
     opacity: 0;
-    width: 100%;
+    width: 99%;
     top: 5%;
+    border: solid;
+    padding: 2px;
+    padding-bottom: 4px;
 }
 input[type="checkbox"]:checked ~ div > img{
     opacity: 100;
-}
-
-.water-image{
-    border: 2px solid black;
 }

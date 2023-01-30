@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 10.2</title>
+</head>
+<body>
+    <style>
+        h4{
+            background-color: rgb(0, 0, 0);
+            color: orange;
+            box-shadow: 10px 10px 15px rgba(90, 59, 0, 0.678);
+            
+        }
+        body{
+            padding-left: 25%;
+            padding-right: 25%;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            font-size: large;
+        }
+    </style>
+    <h1>Fehler finden mit Typescript</h1>
+    <h4>Fehlerhaftes Code-Beispiel:</h4>
+    <code>
+        const add = (x,y) => x+y;<br>
+        const equals = (x,y) => x===y;<br>
+        <br>
+        console.log( add(1,2) );<br>
+        console.log( add(true, true ) );<br>
+        console.log( add(true, false ) );<br>
+        var x = y = 1;<br>
+        console.log( add(equals(x,y), equals(y,x)) );
+    </code>
+    <h4>Übersetzung in ein (fehlerhaftes) TypeScript Programm:</h4>
+    <code>
+        const add = (x: number, y: number): number => x + y;<br>
+        const equals = (x: any, y: any): boolean => x === y;<br>
+        <br>
+        console.log(add(1, 2));<br>
+        console.log(add(true, true));<br>
+        console.log(add(true, false));<br>
+        let x: number = 1;<br>
+        let y: number = 1;<br>
+        console.log(add(equals(x, y), equals(y, x)));
+    </code>
+    <p>TypeScript akzeptiert in der Funktion add()die numerischen und booleschen Werte nicht. Dies würde zu einen Fehler beim Compilieren führen. <br>
+    Weiterhin können blocked-scope Variablen (wie in Z.6) nicht neu deklariert werden.</p>
+    <h4>Wie kann TypeScript sonst noch bei der Fehlersuche helfen?</h4>
+    <p>Weitere Fehlerhilfe durch TypeScript:
+        <ul>
+            <li>Typfehler: Wenn ein Wert einen falschen Typ hat, z.B. eine Zahl statt eines Strings, wird ein Typfehler gemeldet.</li>
+            <li>Variablenfehler: Wenn eine Variable nicht richtig deklariert oder verwendet wurde, wie z.B. eine nicht initialisierte Variable, wird ein Variablenfehler gemeldet.</li>
+            <lI>Syntaxfehler: Wenn der Code nicht der Syntax der Sprache entspricht, wie z.B. fehlende Klammern oder Semikolons, wird ein Syntaxfehler gemeldet.</lI>
+            <li>Semantikfehler: Wenn der Code semantisch inkorrekt ist, wie z.B. eine ungültige Verwendung von Operatoren oder eine ungültige Verwendung von Schlüsselwörtern, wird ein Semantikfehler gemeldet.</li>
+            <li>Linting-Fehler: TypeScript enthält auch ein Linting-System, das Entwickler dabei unterstützt, gute Programmierpraktiken zu befolgen und Code-Smell zu vermeiden. <br>
+            Ich verwende in dem Modul Integration Architectures bspw. ES-Lint.</li>
+            <li>Readability: Verbesserung der Verständlichkeit bzw. Lesbarkeit des Codes durch explizite Angabe der Typen, sowie Überprüfung der Signaturen von Funktionen und Methoden</li>
+            <li></li>
+        </ul>
+    </p>
+    <script>
+        const add = (x,y) => x+y;
+        const equals = (x,y) => x===y;
+
+        console.log( add(1,2) );
+        console.log( add(true, true ) );
+        console.log( add(true, false ) );
+        var x = y = 1;
+        console.log( add(equals(x,y), equals(y,x)) );
+    </script>
+    <script src="Task10.2.ts"></script>
+</body>
+</html>
